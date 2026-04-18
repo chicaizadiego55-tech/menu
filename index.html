@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="menu.css"/>
+        
     </head>
     <body>
-        <a href="https://juego-limones-omega.vercel.app//">JUEGO LIMONES</a>
-        <a href="https://juego-cazando2-taupe.vercel.app//">JUEGO CAZANDO</a>
+    <img src="pagina.png" alt="logo pagina">
+        <header class="header">
+      <h1>PROYECTOS JAVASCRIPT</h1>
+      <p class="subtitulo">El código es poesía</p>
+      <h2 class="autor">Diego Chicaiza</h2>
+
+    </header>
+        <div id="proyectos-grid">
+
+  <div class="proyecto-card">
+    <canvas id="canvas1" width="200" height="50"></canvas>
+    <p>Atrapa los limones que caen antes de que toquen el suelo.</p>
+    <p>Hecho con: HTML, CSS, JavaScript</p>
+    <a href="https://juego-limones-omega.vercel.app//" class="proyecto-link" target="_blank">JUGAR</a>
+  </div>
+
+  <div class="proyecto-card">
+    <canvas id="canvas2" width="200" height="50"></canvas>
+    <p>Mueve tu mira y caza los objetivos antes de que escapen.</p>
+    <p>Hecho con: HTML, CSS, JavaScript</p>
+    <a href="https://juego-cazando2-taupe.vercel.app//" class="proyecto-link" target="_blank">JUGAR</a>
+  </div>
+
+</div>
         <script src="menu.js"></script>
     </body>
 </html>

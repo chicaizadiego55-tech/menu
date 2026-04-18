@@ -1,0 +1,174 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+:root {
+  --negro: #0a0a0f;
+  --verde: #00ff88;
+  --verde-oscuro: #00c96e;
+  --verde-glow: rgba(0, 255, 136, 0.15);
+  --gris: #1a1a2e;
+  --gris-claro: #2a2a3e;
+  --texto: #e0ffe8;
+  --acento: #7effc2;
+}
+ 
+body {
+  background-color: var(--negro);
+  color: var(--texto);
+  font-family: 'Share Tech Mono', monospace;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 4rem;
+  position: relative;
+  overflow-x: hidden;
+}
+ 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 136, 0.03) 2px,
+      rgba(0, 255, 136, 0.03) 4px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+img[alt="logo pagina"] {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 12px var(--verde));
+  z-index: 1;
+}
+ 
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+ 
+.header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  color: var(--verde);
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+  animation: flicker 4s infinite alternate;
+}
+ 
+@keyframes flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.85; }
+  97% { opacity: 1; }
+  98% { opacity: 0.9; }
+}
+ 
+.subtitulo {
+  font-size: 0.9rem;
+  color: rgba(0, 255, 136, 0.5);
+  letter-spacing: 0.2em;
+  margin-top: 0.4rem;
+  text-transform: lowercase;
+}
+ 
+.autor {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  color: var(--acento);
+  letter-spacing: 0.3em;
+  margin-top: 0.8rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+ 
+#proyectos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 680px;
+  z-index: 1;
+}
+ 
+.proyecto-card {
+  background: var(--gris);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 4px;
+  padding: 1.5rem;
+  position: relative;
+  transition: border-color 0.3s, background 0.3s;
+  overflow: hidden;
+}
+ 
+.proyecto-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--verde);
+  box-shadow: 0 0 8px var(--verde);
+}
+ 
+.proyecto-card:hover {
+  border-color: rgba(0, 255, 136, 0.5);
+  background: var(--gris-claro);
+}
+ 
+.proyecto-card canvas {
+  display: block;
+  margin: 0 0 1rem 0;
+  image-rendering: pixelated;
+}
+ 
+.proyecto-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+ 
+.tag {
+  font-size: 0.7rem;
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--verde);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 2px;
+  padding: 2px 8px;
+  letter-spacing: 0.08em;
+}
+ 
+.proyecto-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  color: var(--negro);
+  background: var(--verde);
+  padding: 0.45rem 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.1s;
+}
+ 
+.proyecto-link:hover {
+  background: var(--acento);
+  transform: translateY(-1px);
+}
+ 
+.proyecto-link:active {
+  transform: translateY(0);
+}

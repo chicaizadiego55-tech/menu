@@ -19,4 +19,12 @@ window.onload = function() {
   ctx2.textAlign = "center";
   ctx2.fillText("JUEGO CAZANDO", 100, 31);
 
+   const ctx3 = document.getElementById("canvas3").getContext("2d");
+  ctx3.fillStyle = "#0a0a0f";
+  ctx3.fillRect(0, 0, 200, 50);
+  ctx3.fillStyle = "#00ff88";
+  ctx3.font = "bold 14px monospace";
+  ctx3.textAlign = "center";
+  ctx3.fillText("DIEGOCREDIT", 100, 31);
+
 };
